@@ -569,18 +569,18 @@ import random
 #     result = (sum(matrix[5])) / len(matrix)
 # print(result)
 
-import random
-lenX = int(input('Введите размер матрицы '))
-lenY = int(input('Введите размер матрицы '))
-matrix = [[]] * lenX
-for i in range(lenX):
-    matrix[i] = [0] * lenY
-    # print(matrix[i])
-for i in range(lenX):
-    for j in range(lenY):
-        matrix[i][j] = random.randint(10, 99)
-for i in range(lenX):
-    print(matrix[i])
+# import random
+# lenX = int(input('Введите размер матрицы '))
+# lenY = int(input('Введите размер матрицы '))
+# matrix = [[]] * lenX
+# for i in range(lenX):
+#     matrix[i] = [0] * lenY
+#     # print(matrix[i])
+# for i in range(lenX):
+#     for j in range(lenY):
+#         matrix[i][j] = random.randint(10, 99)
+# for i in range(lenX):
+#     print(matrix[i])
 
 # 12.6 б
 # number = int(input('Введите номер строки массива\n'))
@@ -596,17 +596,17 @@ for i in range(lenX):
 
 # 12.16 а
 # number1X = int(input('Введите номер строки массива 1-го элемента \n'))
-# number1Y = int(input('Введите номер солбца массива 1-го элемента \n'))
+# number1Y = int(input('Введите номер столбца массива 1-го элемента \n'))
 # number2X = int(input('Введите номер строки массива 2-го элемента \n'))
 # number2Y = int(input('Введите номер строки массива 2-го элемента \n'))
 # result = matrix[number1X][number1Y] - matrix[number2X][number2Y]
 # print(result)
 
 # 12.33 a
-# number = int(input('Введите номер строки массива\n'))
-#
-# for i in range(lenX):
-#     print(matrix[number][i], end=' ')
+
+# matrY = 3
+# for item in range(lenX -1, -1, -1):
+#     print(matrix[item][matrY])
 
 
 # 12.62 a
@@ -618,13 +618,63 @@ for i in range(lenX):
 
 # 12.90 а,б
 
-number = int(input('Введите номер строки массива\n'))
+# number = int(input('Введите номер строки массива\n'))
+# somString = []
+# for i in range(len(matrix)):
+#     somString.append(min(matrix[i]))
+# print(somString)
 
-# for i in range(lenX):
-result = max(matrix[number])
-result1 = min(matrix[number])
-print(f'минимальное значение в массиве = {result1}, максимальное значение в массиве = {result}')
+# result = max(matrix[number])
+# result1 = min(matrix[number])
+# print(f'минимальное значение в массиве = {result1}, максимальное значение в массиве = {result}')
+
+# progLang = {'python', 'JavaScripts', 'Go'} # коллекция уникальные перевод set
+# # print(len(progLang))
+# # for lang in progLang:
+# #     print(lang)
+# # print('python' in progLang) # наличие элемента в коллекции
+#
+# progLang.add('Java') # добавляем элемент
+# # print(progLang)
+# secondLang = {'C+', 'C++'}
+# progLang.update(secondLang) # добавляем secondLang только уникальные
+# print(progLang)
+# progLang.remove('C++') # удаление если нет ошибка
+# print(progLang)
+# progLang.discard('Ja') # если нет данных он не удалит т.е. Ja
+# # progLang.pop() # удаляет случайно
+# # progLang.clear() # удаляет все
 
 
+import os
+import function
 
+maxUsers = 5
+users = set()
+os.system('cls')
+print('start')
 
+while True:
+    print('1. Имена пользователей в коворкинге')
+    print('2. Количество пользователей')
+    print('3. Добавьте пользователя')
+    print('4. Удалить пользователя')
+    print('0. Выход из программы')
+    choice = input('Введите порядковый номер: ')
+    if choice == '0':
+        break
+    elif choice == '1':
+        function.print_users(users)
+    elif choice == '2':
+        function.print_count_users(users)
+    elif choice == '3':
+        function.add_users(users, maxUsers)
+    elif choice == '4':
+        function.remove_users(users)
+    else:
+        print('Неправильное действие')
+    print()
+
+    input('Нажмите Enter для продолжения ')
+    os.system('cls')
+print('Конец')
