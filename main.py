@@ -637,6 +637,7 @@ import random
 # progLang.add('Java') # добавляем элемент
 # # print(progLang)
 # secondLang = {'C+', 'C++'}
+# print(type(secondLang))
 # progLang.update(secondLang) # добавляем secondLang только уникальные
 # print(progLang)
 # progLang.remove('C++') # удаление если нет ошибка
@@ -646,35 +647,77 @@ import random
 # # progLang.clear() # удаляет все
 
 
+# import os
+# import function
+#
+# maxUsers = 5
+# users = set()
+# os.system('cls')
+# print('start')
+#
+# while True:
+#     print('1. Имена пользователей в коворкинге')
+#     print('2. Количество пользователей')
+#     print('3. Добавьте пользователя')
+#     print('4. Удалить пользователя')
+#     print('0. Выход из программы')
+#     choice = input('Введите порядковый номер: ')
+#     if choice == '0':
+#         break
+#     elif choice == '1':
+#         function.print_users(users)
+#     elif choice == '2':
+#         function.print_count_users(users)
+#     elif choice == '3':
+#         function.add_users(users, maxUsers)
+#     elif choice == '4':
+#         function.remove_users(users)
+#     else:
+#         print('Неправильное действие')
+#     print()
+#
+#     input('Нажмите Enter для продолжения ')
+#     os.system('cls')
+# print('Конец')
+
 import os
-import function
-
-maxUsers = 5
-users = set()
-os.system('cls')
-print('start')
-
+garage = [''] * 3
+# maxCountCar =
 while True:
-    print('1. Имена пользователей в коворкинге')
-    print('2. Количество пользователей')
-    print('3. Добавьте пользователя')
-    print('4. Удалить пользователя')
-    print('0. Выход из программы')
-    choice = input('Введите порядковый номер: ')
+    print('0. Выход')
+    print('1. Добавить авто')
+    print('2. Удалить авто')
+    print('3. Список авто')
+    print('4. Количество авто')
+    choice = input('Вебирите номер: ')
     if choice == '0':
         break
     elif choice == '1':
-        function.print_users(users)
+        if garage.count('') == 0:
+            print('Гараж пуст')
+        else:
+            carNumber = input('Введите номер машины: ')
+            print('Список авто ', garage)
+            index = int(input('Введите индекс: '))
+            garage[index] = carNumber
     elif choice == '2':
-        function.print_count_users(users)
+        carNumber = input('Введите номер машины: ')
+        if carNumber in garage:
+            index = int(input('Введите индекс: '))
+            del garage[index]
+        else:
+            print('Номера машины нет в гараже', garage)
     elif choice == '3':
-        function.add_users(users, maxUsers)
+        print('Список машин в гараже', garage)
     elif choice == '4':
-        function.remove_users(users)
-    else:
-        print('Неправильное действие')
-    print()
+        print('Количество авто в гараже = ',len(garage))
 
-    input('Нажмите Enter для продолжения ')
-    os.system('cls')
-print('Конец')
+
+# import datetime
+# time = datetime.datetime.now()
+#
+# # print(time.date())
+# # print(time.now())
+# # result = time.strftime('%d.%m.%Y|%H:%M:%S')
+# result = time.strftime('%Y.%m.%d|%H:%M:%S')
+# print(result)
