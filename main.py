@@ -680,44 +680,61 @@ import random
 #     os.system('cls')
 # print('Конец')
 
-import os
-garage = [''] * 3
-# maxCountCar =
-while True:
-    print('0. Выход')
-    print('1. Добавить авто')
-    print('2. Удалить авто')
-    print('3. Список авто')
-    print('4. Количество авто')
-    choice = input('Вебирите номер: ')
-    if choice == '0':
-        break
-    elif choice == '1':
-        if garage.count('') == 0:
-            print('Гараж пуст')
-        else:
-            carNumber = input('Введите номер машины: ')
-            print('Список авто ', garage)
-            index = int(input('Введите индекс: '))
-            garage[index] = carNumber
-    elif choice == '2':
-        carNumber = input('Введите номер машины: ')
-        if carNumber in garage:
-            index = int(input('Введите индекс: '))
-            del garage[index]
-        else:
-            print('Номера машины нет в гараже', garage)
-    elif choice == '3':
-        print('Список машин в гараже', garage)
-    elif choice == '4':
-        print('Количество авто в гараже = ',len(garage))
+# import os
+# garage = [''] * 3
+# # maxCountCar =
+# while True:
+#     print('0. Выход')
+#     print('1. Добавить авто')
+#     print('2. Удалить авто')
+#     print('3. Список авто')
+#     print('4. Количество авто')
+#     choice = input('Вебирите номер: ')
+#     if choice == '0':
+#         break
+#     elif choice == '1':
+#         if garage.count('') == 0:
+#             print('Гараж пуст')
+#         else:
+#             carNumber = input('Введите номер машины: ')
+#             print('Список авто ', garage)
+#             index = int(input('Введите индекс: '))
+#             garage[index] = carNumber
+#     elif choice == '2':
+#         carNumber = input('Введите номер машины: ')
+#         if carNumber in garage:
+#             index = int(input('Введите индекс: '))
+#             del garage[index]
+#         else:
+#             print('Номера машины нет в гараже', garage)
+#     elif choice == '3':
+#         print('Список машин в гараже', garage)
+#     elif choice == '4':
+#         print('Количество авто в гараже = ',len(garage))
 
 
 # import datetime
+# from datetime import timedelta
 # time = datetime.datetime.now()
-#
+# date = input('Введите дату\n')
+# sutky = int(input('Введите количество суток\n'))
+# result = date + timedelta(days=sutky)
+# print(result)
+
+
+# print(date)
 # # print(time.date())
 # # print(time.now())
 # # result = time.strftime('%d.%m.%Y|%H:%M:%S')
-# result = time.strftime('%Y.%m.%d|%H:%M:%S')
+# # result = time.strftime('%Y.%m.%d|%H:%M:%S')
 # print(result)
+# date = date.replace('+','').replace(' ','')
+# print(date)
+# *numbers - неограниченное кол-во параметров
+
+def template_first(name_shop):
+    return lambda number, name_product: f'{name_shop}: Serial - {number}; Name - {name_product}'
+
+l_1 = template_first('Shop_1')
+result = l_1(4567, 'Category')
+print(result)
